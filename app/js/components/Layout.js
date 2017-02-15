@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './common/Header/Header';
+import Footer from './common/Footer/Footer';
 
 export default class Layout extends React.Component {
   constructor() {
