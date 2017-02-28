@@ -8,7 +8,6 @@ import Layout from "./components/Layout/Layout";
 import Settings from "./components/Settings/Settings";
 
 const app = document.getElementById('app');
-
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Layout}>
