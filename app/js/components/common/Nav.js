@@ -39,7 +39,7 @@ export default class Nav extends React.Component {
                 <IndexLink to="/" onlyActiveOnIndex={true} activeClassName="active" onClick={this.toggleCollapse.bind(this)}>Todos</IndexLink>
               </li>
               <li>
-                <Link to="archives" activeClassName="active" onClick={this.toggleCollapse.bind(this)}>Favorites</Link>
+                <Link to="favorites" activeClassName="active" onClick={this.toggleCollapse.bind(this)}>Favorites</Link>
               </li>
               <li>
                 <Link to="settings" activeClassName="active" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
