@@ -26,12 +26,19 @@ class TodoStore extends EventEmitter {
         });
         this.emit("change");
     }
+    receiveTodos(todos) {
+        this.todos = todos;
+        this.emit("change");
+    }
     getAll() {
         return this.todos;
     }
     handleActions(action){
         if(action.type === "CREATE_TODO"){
             this.createTodo(action.text);
+        }
+        if(action.type === "RECEIVE_TODOS"){
+            this.receiveTodos(action.todos);
         }
     }
 }
