@@ -8,14 +8,17 @@ class Layout extends React.Component {
 		this.state = {
 			title: "Welcome!"
 		};
+		this.changeTitle = this.changeTitle.bind(this);
 	}
+	
+	changeTitle(title){
+		this.setState({title});
+	}
+	
 	render() {
-		setTimeout(()=>{
-			this.setState({title: "Welcome!!!!"});
-		}, 3000);
 		return (
 			<div>
-				<Header title={this.state.title}/>
+				<Header changeTitle={this.changeTitle} title={this.state.title}/>
 				<Footer />
 			</div>
 		);
