@@ -19,9 +19,13 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+      historyApiFallback: true  
+    },
     output: {
         path: __dirname + "/src/",
-        filename: "index.min.js"
+        filename: "index.min.js",
+        publicPath: '/'
     },
     plugins: debug ? [] : [
             new webpack.optimize.DedupePlugin(),

@@ -1,32 +1,32 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
+import { Switch, Route } from 'react-router-dom';
+import Featured from "./Featured";
+import Archived from "./Archived";
+import Settings from "./Settings";
 
 class Layout extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			title: "Welcome!"
-		};
-		this.changeTitle = this.changeTitle.bind(this);
-	}
-	
-	changeTitle(title){
-		this.setState({title});
-	}
-	
 	render() {
 		return (
-			<div>
-				<Header changeTitle={this.changeTitle} title={this.state.title}/>
+			<main>
+				<Switch>
+					<Route exact path='/' component={Featured}/>
+					<Route path='/archived' component={Archived}/>
+					<Route path='/settings' component={Settings}/>
+					<Route render={function() { return <p>Not Found </p>}} />
+				</Switch>
 				<Footer />
-			</div>
+			</main>
 		);
 	}
 }
 export default Layout;
 
+/*
 
+					<Route path='/roster' component={Roster}/>
+					<Route path='/schedule' component={Schedule}/>
+*/
 
 
 // class Layout extends React.Component {
